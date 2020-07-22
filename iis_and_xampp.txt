@@ -1,0 +1,9 @@
+If you need to work with IIS and XAMPP together, you need set ports foe XAMPP (foe example 10080 an 10443). And next for access site not like 
+sitename.local:10080, but sitename.local you may install Fiddler Classic and add there rull like
+
+if (oSession.HostnameIs("sitename.local")){
+			oSession.bypassGateway = true;
+			oSession["x-overrideHost"] = "127.0.0.1:10080";
+}
+
+PS: fiddler must be active. If not site will available only like sitename.local:10080
